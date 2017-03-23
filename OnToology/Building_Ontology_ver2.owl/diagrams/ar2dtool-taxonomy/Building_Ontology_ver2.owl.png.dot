@@ -1,0 +1,29 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "bim-owl-test:Slab" "bim-owl-test:BuildingElement" "bim-owl-test:Wall" "bim-owl-test:Beam" "bim-owl-test:Plastic" "bim-owl-test:Glass" "bim-owl-test:Concrete" "bim-owl-test:Location" "bim-owl-test:Door" "bim-owl-test:Steel" "bim-owl-test:Materials" "bim-owl-test:Site" "bim-owl-test:StructuralElement" "bim-owl-test:Foundation" "bim-owl-test:Wood" "2de3d80e:15afb2d5e67:-7fe2" "2de3d80e:15afb2d5e67:-7feb" "bim-owl-test:Column" "bim-owl-test:Factory" "bim-owl-test:Window" "bim-owl-test:Facade" ; /*classes style*/
+	"bim-owl-test:Site" -> "bim-owl-test:Location" [ label = "rdfs:subClassOf" ];
+	"bim-owl-test:Wood" -> "bim-owl-test:Materials" [ label = "rdfs:subClassOf" ];
+	"bim-owl-test:Foundation" -> "2de3d80e:15afb2d5e67:-7feb" [ label = "rdfs:subClassOf" ];
+	"bim-owl-test:Foundation" -> "bim-owl-test:StructuralElement" [ label = "rdfs:subClassOf" ];
+	"bim-owl-test:Foundation" -> "bim-owl-test:BuildingElement" [ label = "rdfs:subClassOf" ];
+	"bim-owl-test:Door" -> "bim-owl-test:BuildingElement" [ label = "rdfs:subClassOf" ];
+	"bim-owl-test:Glass" -> "bim-owl-test:Materials" [ label = "rdfs:subClassOf" ];
+	"bim-owl-test:Wall" -> "bim-owl-test:StructuralElement" [ label = "rdfs:subClassOf" ];
+	"bim-owl-test:Wall" -> "bim-owl-test:BuildingElement" [ label = "rdfs:subClassOf" ];
+	"bim-owl-test:Steel" -> "bim-owl-test:Materials" [ label = "rdfs:subClassOf" ];
+	"bim-owl-test:Beam" -> "bim-owl-test:StructuralElement" [ label = "rdfs:subClassOf" ];
+	"bim-owl-test:Beam" -> "bim-owl-test:BuildingElement" [ label = "rdfs:subClassOf" ];
+	"bim-owl-test:Factory" -> "bim-owl-test:Location" [ label = "rdfs:subClassOf" ];
+	"bim-owl-test:Facade" -> "bim-owl-test:BuildingElement" [ label = "rdfs:subClassOf" ];
+	"bim-owl-test:Column" -> "bim-owl-test:StructuralElement" [ label = "rdfs:subClassOf" ];
+	"bim-owl-test:Column" -> "bim-owl-test:BuildingElement" [ label = "rdfs:subClassOf" ];
+	"bim-owl-test:Window" -> "bim-owl-test:BuildingElement" [ label = "rdfs:subClassOf" ];
+	"bim-owl-test:Slab" -> "bim-owl-test:StructuralElement" [ label = "rdfs:subClassOf" ];
+	"bim-owl-test:Slab" -> "bim-owl-test:BuildingElement" [ label = "rdfs:subClassOf" ];
+	"bim-owl-test:StructuralElement" -> "bim-owl-test:BuildingElement" [ label = "rdfs:subClassOf" ];
+	"bim-owl-test:Location" -> "2de3d80e:15afb2d5e67:-7fe2" [ label = "rdfs:subClassOf" ];
+	"bim-owl-test:Plastic" -> "bim-owl-test:Materials" [ label = "rdfs:subClassOf" ];
+	"bim-owl-test:Concrete" -> "bim-owl-test:Materials" [ label = "rdfs:subClassOf" ];
+
+}
