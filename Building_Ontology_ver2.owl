@@ -1,679 +1,473 @@
-<?xml version="1.0"?>
-<Ontology xmlns="http://www.w3.org/2002/07/owl#"
-     xml:base="http://purl.org/net/bim-owl-test"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     ontologyIRI="http://purl.org/net/bim-owl-test">
-    <Prefix name="" IRI="http://www.semanticweb.org/chungho/ontologies/2017/2/untitled-ontology-28#"/>
-    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
-    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
-    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
-    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
-    <Prefix name="swrl" IRI="http://www.w3.org/2003/11/swrl#"/>
-    <Prefix name="swrlb" IRI="http://www.w3.org/2003/11/swrlb#"/>
-    <Prefix name="bim-owl-test" IRI="http://purl.org/net/bim-owl-test#"/>
-    <Declaration>
-        <ObjectProperty IRI="#isDeliveredTo"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Factory"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Steel"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#InSituElement"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Beam"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#position_Z"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Window"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Door"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasElements"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#WoodElement"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ConcreteElement"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Window_1"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#width"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Column_2"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Beam_1"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#BuildingElement"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Door_1"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isConstructedAt"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Foundation"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Portland_Concrete"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#position_Y"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Site"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasBuiltAt"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Jobsite_1"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isMadeBy"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Slab"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#SteelElement"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Factory_1"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isConnected"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasParent"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Glass"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Wall"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Plastic"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Column_1"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Materials"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Location"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Wood"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Building"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Facade"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#length"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#height"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#material"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#position_X"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Concrete"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#PrefabricatedElement"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#StructuralElement"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Column"/>
-    </Declaration>
-    <EquivalentClasses>
-        <Class IRI="#Beam"/>
-        <ObjectMinCardinality cardinality="2">
-            <ObjectProperty IRI="#isConnected"/>
-            <Class IRI="#Column"/>
-        </ObjectMinCardinality>
-    </EquivalentClasses>
-    <EquivalentClasses>
-        <Class IRI="#ConcreteElement"/>
-        <ObjectIntersectionOf>
-            <Class IRI="#BuildingElement"/>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#isMadeBy"/>
-                <Class IRI="#Concrete"/>
-            </ObjectSomeValuesFrom>
-        </ObjectIntersectionOf>
-    </EquivalentClasses>
-    <EquivalentClasses>
-        <Class IRI="#InSituElement"/>
-        <ObjectIntersectionOf>
-            <Class IRI="#BuildingElement"/>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#hasBuiltAt"/>
-                <Class IRI="#Site"/>
-            </ObjectSomeValuesFrom>
-        </ObjectIntersectionOf>
-    </EquivalentClasses>
-    <EquivalentClasses>
-        <Class IRI="#PrefabricatedElement"/>
-        <ObjectIntersectionOf>
-            <Class IRI="#BuildingElement"/>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#hasBuiltAt"/>
-                <Class IRI="#Factory"/>
-            </ObjectSomeValuesFrom>
-        </ObjectIntersectionOf>
-    </EquivalentClasses>
-    <EquivalentClasses>
-        <Class IRI="#SteelElement"/>
-        <ObjectIntersectionOf>
-            <Class IRI="#BuildingElement"/>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#isMadeBy"/>
-                <Class IRI="#Steel"/>
-            </ObjectSomeValuesFrom>
-        </ObjectIntersectionOf>
-    </EquivalentClasses>
-    <EquivalentClasses>
-        <Class IRI="#WoodElement"/>
-        <ObjectIntersectionOf>
-            <Class IRI="#BuildingElement"/>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#isMadeBy"/>
-                <Class IRI="#Wood"/>
-            </ObjectSomeValuesFrom>
-        </ObjectIntersectionOf>
-    </EquivalentClasses>
-    <SubClassOf>
-        <Class IRI="#Beam"/>
-        <Class IRI="#BuildingElement"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Beam"/>
-        <Class IRI="#StructuralElement"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Beam"/>
-        <ObjectMinCardinality cardinality="1">
-            <ObjectProperty IRI="#isMadeBy"/>
-            <Class IRI="#Materials"/>
-        </ObjectMinCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Column"/>
-        <Class IRI="#BuildingElement"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Column"/>
-        <Class IRI="#StructuralElement"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Column"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#isMadeBy"/>
-            <ObjectUnionOf>
-                <Class IRI="#Concrete"/>
-                <Class IRI="#Steel"/>
-                <Class IRI="#Wood"/>
-            </ObjectUnionOf>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Concrete"/>
-        <Class IRI="#Materials"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Door"/>
-        <Class IRI="#BuildingElement"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Door"/>
-        <ObjectMinCardinality cardinality="1">
-            <ObjectProperty IRI="#hasBuiltAt"/>
-            <Class IRI="#Factory"/>
-        </ObjectMinCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Door"/>
-        <ObjectMinCardinality cardinality="1">
-            <ObjectProperty IRI="#isMadeBy"/>
-            <Class IRI="#Materials"/>
-        </ObjectMinCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Facade"/>
-        <Class IRI="#BuildingElement"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Facade"/>
-        <ObjectMinCardinality cardinality="1">
-            <ObjectProperty IRI="#hasBuiltAt"/>
-            <Class IRI="#Factory"/>
-        </ObjectMinCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Factory"/>
-        <Class IRI="#Location"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Foundation"/>
-        <Class IRI="#BuildingElement"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Foundation"/>
-        <Class IRI="#StructuralElement"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Foundation"/>
-        <ObjectIntersectionOf>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#isMadeBy"/>
-                <Class IRI="#Concrete"/>
-            </ObjectSomeValuesFrom>
-            <ObjectExactCardinality cardinality="1">
-                <ObjectProperty IRI="#hasBuiltAt"/>
-                <Class IRI="#Site"/>
-            </ObjectExactCardinality>
-        </ObjectIntersectionOf>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Glass"/>
-        <Class IRI="#Materials"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Location"/>
-        <ObjectUnionOf>
-            <Class IRI="#Factory"/>
-            <Class IRI="#Site"/>
-        </ObjectUnionOf>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Plastic"/>
-        <Class IRI="#Materials"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Site"/>
-        <Class IRI="#Location"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Slab"/>
-        <Class IRI="#BuildingElement"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Slab"/>
-        <Class IRI="#StructuralElement"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Slab"/>
-        <ObjectExactCardinality cardinality="1">
-            <ObjectProperty IRI="#hasBuiltAt"/>
-            <Class IRI="#Site"/>
-        </ObjectExactCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Steel"/>
-        <Class IRI="#Materials"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#StructuralElement"/>
-        <Class IRI="#BuildingElement"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Wall"/>
-        <Class IRI="#BuildingElement"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Wall"/>
-        <Class IRI="#StructuralElement"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Wall"/>
-        <ObjectExactCardinality cardinality="1">
-            <ObjectProperty IRI="#hasBuiltAt"/>
-            <Class IRI="#Site"/>
-        </ObjectExactCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Window"/>
-        <Class IRI="#BuildingElement"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Window"/>
-        <ObjectMinCardinality cardinality="1">
-            <ObjectProperty IRI="#hasBuiltAt"/>
-            <Class IRI="#Factory"/>
-        </ObjectMinCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Wood"/>
-        <Class IRI="#Materials"/>
-    </SubClassOf>
-    <ClassAssertion>
-        <Class IRI="#Beam"/>
-        <NamedIndividual IRI="#Beam_1"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Column"/>
-        <NamedIndividual IRI="#Column_1"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Column"/>
-        <NamedIndividual IRI="#Column_2"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Door"/>
-        <NamedIndividual IRI="#Door_1"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Factory"/>
-        <NamedIndividual IRI="#Factory_1"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Site"/>
-        <NamedIndividual IRI="#Jobsite_1"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Concrete"/>
-        <NamedIndividual IRI="#Portland_Concrete"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Window"/>
-        <NamedIndividual IRI="#Window_1"/>
-    </ClassAssertion>
-    <DifferentIndividuals>
-        <NamedIndividual IRI="#Column_1"/>
-        <NamedIndividual IRI="#Column_2"/>
-    </DifferentIndividuals>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasBuiltAt"/>
-        <NamedIndividual IRI="#Beam_1"/>
-        <NamedIndividual IRI="#Jobsite_1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#isConnected"/>
-        <NamedIndividual IRI="#Beam_1"/>
-        <NamedIndividual IRI="#Column_1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#isConnected"/>
-        <NamedIndividual IRI="#Beam_1"/>
-        <NamedIndividual IRI="#Column_2"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#isMadeBy"/>
-        <NamedIndividual IRI="#Beam_1"/>
-        <NamedIndividual IRI="#Portland_Concrete"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#isMadeBy"/>
-        <NamedIndividual IRI="#Column_1"/>
-        <NamedIndividual IRI="#Portland_Concrete"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#isMadeBy"/>
-        <NamedIndividual IRI="#Column_2"/>
-        <NamedIndividual IRI="#Portland_Concrete"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasBuiltAt"/>
-        <NamedIndividual IRI="#Door_1"/>
-        <NamedIndividual IRI="#Factory_1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasBuiltAt"/>
-        <NamedIndividual IRI="#Window_1"/>
-        <NamedIndividual IRI="#Factory_1"/>
-    </ObjectPropertyAssertion>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasParent"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#isConstructedAt"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#isDeliveredTo"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <FunctionalObjectProperty>
-        <ObjectProperty IRI="#hasBuiltAt"/>
-    </FunctionalObjectProperty>
-    <FunctionalObjectProperty>
-        <ObjectProperty IRI="#hasParent"/>
-    </FunctionalObjectProperty>
-    <FunctionalObjectProperty>
-        <ObjectProperty IRI="#isConstructedAt"/>
-    </FunctionalObjectProperty>
-    <FunctionalObjectProperty>
-        <ObjectProperty IRI="#isDeliveredTo"/>
-    </FunctionalObjectProperty>
-    <FunctionalObjectProperty>
-        <ObjectProperty IRI="#isMadeBy"/>
-    </FunctionalObjectProperty>
-    <InverseFunctionalObjectProperty>
-        <ObjectProperty IRI="#hasElements"/>
-    </InverseFunctionalObjectProperty>
-    <SymmetricObjectProperty>
-        <ObjectProperty IRI="#isConnected"/>
-    </SymmetricObjectProperty>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasBuiltAt"/>
-        <Class IRI="#BuildingElement"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasElements"/>
-        <Class IRI="#Building"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasParent"/>
-        <ObjectUnionOf>
-            <Class IRI="#Door"/>
-            <Class IRI="#Window"/>
-        </ObjectUnionOf>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isConnected"/>
-        <Class IRI="#StructuralElement"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isConstructedAt"/>
-        <Class IRI="#Building"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isDeliveredTo"/>
-        <Class IRI="#PrefabricatedElement"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isMadeBy"/>
-        <Class IRI="#BuildingElement"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasBuiltAt"/>
-        <Class IRI="#Location"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasElements"/>
-        <Class IRI="#BuildingElement"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasParent"/>
-        <Class IRI="#Wall"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isConnected"/>
-        <Class IRI="#StructuralElement"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isConstructedAt"/>
-        <Class IRI="#Site"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isDeliveredTo"/>
-        <Class IRI="#Site"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isMadeBy"/>
-        <Class IRI="#Materials"/>
-    </ObjectPropertyRange>
-    <SubDataPropertyOf>
-        <DataProperty IRI="#height"/>
-        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty IRI="#length"/>
-        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty IRI="#position_X"/>
-        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty IRI="#position_Y"/>
-        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty IRI="#position_Z"/>
-        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
-    </SubDataPropertyOf>
-    <FunctionalDataProperty>
-        <DataProperty IRI="#height"/>
-    </FunctionalDataProperty>
-    <FunctionalDataProperty>
-        <DataProperty IRI="#length"/>
-    </FunctionalDataProperty>
-    <FunctionalDataProperty>
-        <DataProperty IRI="#material"/>
-    </FunctionalDataProperty>
-    <FunctionalDataProperty>
-        <DataProperty IRI="#position_X"/>
-    </FunctionalDataProperty>
-    <FunctionalDataProperty>
-        <DataProperty IRI="#position_Y"/>
-    </FunctionalDataProperty>
-    <FunctionalDataProperty>
-        <DataProperty IRI="#position_Z"/>
-    </FunctionalDataProperty>
-    <FunctionalDataProperty>
-        <DataProperty IRI="#width"/>
-    </FunctionalDataProperty>
-    <DataPropertyDomain>
-        <DataProperty IRI="#height"/>
-        <Class IRI="#BuildingElement"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#length"/>
-        <Class IRI="#BuildingElement"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#material"/>
-        <Class IRI="#BuildingElement"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#position_X"/>
-        <Class IRI="#BuildingElement"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#position_Y"/>
-        <Class IRI="#BuildingElement"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#position_Z"/>
-        <Class IRI="#BuildingElement"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#width"/>
-        <Class IRI="#BuildingElement"/>
-    </DataPropertyDomain>
-    <DataPropertyRange>
-        <DataProperty IRI="#height"/>
-        <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#length"/>
-        <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#material"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#position_X"/>
-        <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#position_Y"/>
-        <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#position_Z"/>
-        <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#width"/>
-        <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
-    </DataPropertyRange>
-    <DisjointDataProperties>
-        <DataProperty IRI="#height"/>
-        <DataProperty IRI="#length"/>
-        <DataProperty IRI="#material"/>
-        <DataProperty IRI="#width"/>
-    </DisjointDataProperties>
-    <DLSafeRule>
-        <Body>
-            <ObjectPropertyAtom>
-                <ObjectProperty IRI="#hasBuiltAt"/>
-                <Variable IRI="urn:swrl#x"/>
-                <Variable IRI="urn:swrl#y"/>
-            </ObjectPropertyAtom>
-            <ClassAtom>
-                <Class IRI="#Factory"/>
-                <Variable IRI="urn:swrl#y"/>
-            </ClassAtom>
-            <ClassAtom>
-                <Class IRI="#Door"/>
-                <Variable IRI="urn:swrl#x"/>
-            </ClassAtom>
-        </Body>
-        <Head>
-            <ClassAtom>
-                <Class IRI="#PrefabricatedElement"/>
-                <Variable IRI="urn:swrl#x"/>
-            </ClassAtom>
-        </Head>
-    </DLSafeRule>
-</Ontology>
+@prefix : <http://purl.org/net/bim-owl-test#> .
+@prefix bim: <http://purl.org/net/bim-owl-test#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
+@base <http://purl.org/net/bim-owl-test> .
+
+<http://purl.org/net/bim-owl-test> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.org/net/bim-owl-test#hasBuiltAt
+bim:hasBuiltAt rdf:type owl:ObjectProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:domain bim:BuildingElement ;
+               rdfs:range bim:Location .
 
 
+###  http://purl.org/net/bim-owl-test#hasElements
+bim:hasElements rdf:type owl:ObjectProperty ,
+                         owl:InverseFunctionalProperty ;
+                rdfs:domain bim:Building ;
+                rdfs:range bim:BuildingElement .
 
-<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
 
+###  http://purl.org/net/bim-owl-test#hasParent
+bim:hasParent rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdf:type owl:FunctionalProperty ;
+              rdfs:domain [ rdf:type owl:Class ;
+                            owl:unionOf ( bim:Door
+                                          bim:Window
+                                        )
+                          ] ;
+              rdfs:range bim:Wall .
+
+
+###  http://purl.org/net/bim-owl-test#isConnected
+bim:isConnected rdf:type owl:ObjectProperty ,
+                         owl:SymmetricProperty ;
+                rdfs:domain bim:StructuralElement ;
+                rdfs:range bim:StructuralElement .
+
+
+###  http://purl.org/net/bim-owl-test#isConstructedAt
+bim:isConstructedAt rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    rdf:type owl:FunctionalProperty ;
+                    rdfs:domain bim:Building ;
+                    rdfs:range bim:Site .
+
+
+###  http://purl.org/net/bim-owl-test#isDeliveredTo
+bim:isDeliveredTo rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf owl:topObjectProperty ;
+                  rdf:type owl:FunctionalProperty ;
+                  rdfs:domain bim:PrefabricatedElement ;
+                  rdfs:range bim:Site .
+
+
+###  http://purl.org/net/bim-owl-test#isMadeBy
+bim:isMadeBy rdf:type owl:ObjectProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain bim:BuildingElement ;
+             rdfs:range bim:Materials .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://purl.org/net/bim-owl-test#height
+bim:height rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdf:type owl:FunctionalProperty ;
+           rdfs:domain bim:BuildingElement ;
+           rdfs:range xsd:nonNegativeInteger .
+
+
+###  http://purl.org/net/bim-owl-test#length
+bim:length rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdf:type owl:FunctionalProperty ;
+           rdfs:domain bim:BuildingElement ;
+           rdfs:range xsd:nonNegativeInteger .
+
+
+###  http://purl.org/net/bim-owl-test#material
+bim:material rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain bim:BuildingElement ;
+             rdfs:range xsd:string .
+
+
+###  http://purl.org/net/bim-owl-test#position_X
+bim:position_X rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdf:type owl:FunctionalProperty ;
+               rdfs:domain bim:BuildingElement ;
+               rdfs:range xsd:nonNegativeInteger .
+
+
+###  http://purl.org/net/bim-owl-test#position_Y
+bim:position_Y rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdf:type owl:FunctionalProperty ;
+               rdfs:domain bim:BuildingElement ;
+               rdfs:range xsd:nonNegativeInteger .
+
+
+###  http://purl.org/net/bim-owl-test#position_Z
+bim:position_Z rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdf:type owl:FunctionalProperty ;
+               rdfs:domain bim:BuildingElement ;
+               rdfs:range xsd:nonNegativeInteger .
+
+
+###  http://purl.org/net/bim-owl-test#width
+bim:width rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain bim:BuildingElement ;
+          rdfs:range xsd:nonNegativeInteger .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.org/net/bim-owl-test#Beam
+bim:Beam rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Restriction ;
+                               owl:onProperty bim:isConnected ;
+                               owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                               owl:onClass bim:Column
+                             ] ;
+         rdfs:subClassOf bim:BuildingElement ,
+                         bim:StructuralElement ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty bim:isMadeBy ;
+                           owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass bim:Materials
+                         ] .
+
+
+###  http://purl.org/net/bim-owl-test#Building
+bim:Building rdf:type owl:Class .
+
+
+###  http://purl.org/net/bim-owl-test#BuildingElement
+bim:BuildingElement rdf:type owl:Class .
+
+
+###  http://purl.org/net/bim-owl-test#Column
+bim:Column rdf:type owl:Class ;
+           rdfs:subClassOf bim:BuildingElement ,
+                           bim:StructuralElement ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty bim:isMadeBy ;
+                             owl:someValuesFrom [ rdf:type owl:Class ;
+                                                  owl:unionOf ( bim:Concrete
+                                                                bim:Steel
+                                                                bim:Wood
+                                                              )
+                                                ]
+                           ] .
+
+
+###  http://purl.org/net/bim-owl-test#Concrete
+bim:Concrete rdf:type owl:Class ;
+             rdfs:subClassOf bim:Materials .
+
+
+###  http://purl.org/net/bim-owl-test#ConcreteElement
+bim:ConcreteElement rdf:type owl:Class ;
+                    owl:equivalentClass [ owl:intersectionOf ( bim:BuildingElement
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty bim:isMadeBy ;
+                                                                 owl:someValuesFrom bim:Concrete
+                                                               ]
+                                                             ) ;
+                                          rdf:type owl:Class
+                                        ] .
+
+
+###  http://purl.org/net/bim-owl-test#Door
+bim:Door rdf:type owl:Class ;
+         rdfs:subClassOf bim:BuildingElement ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty bim:hasBuiltAt ;
+                           owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass bim:Factory
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty bim:isMadeBy ;
+                           owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass bim:Materials
+                         ] .
+
+
+###  http://purl.org/net/bim-owl-test#Facade
+bim:Facade rdf:type owl:Class ;
+           rdfs:subClassOf bim:BuildingElement ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty bim:hasBuiltAt ;
+                             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass bim:Factory
+                           ] .
+
+
+###  http://purl.org/net/bim-owl-test#Factory
+bim:Factory rdf:type owl:Class ;
+            rdfs:subClassOf bim:Location .
+
+
+###  http://purl.org/net/bim-owl-test#Foundation
+bim:Foundation rdf:type owl:Class ;
+               rdfs:subClassOf bim:BuildingElement ,
+                               bim:StructuralElement ,
+                               [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                        owl:onProperty bim:isMadeBy ;
+                                                        owl:someValuesFrom bim:Concrete
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty bim:hasBuiltAt ;
+                                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                        owl:onClass bim:Site
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] .
+
+
+###  http://purl.org/net/bim-owl-test#Glass
+bim:Glass rdf:type owl:Class ;
+          rdfs:subClassOf bim:Materials .
+
+
+###  http://purl.org/net/bim-owl-test#InSituElement
+bim:InSituElement rdf:type owl:Class ;
+                  owl:equivalentClass [ owl:intersectionOf ( bim:BuildingElement
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty bim:hasBuiltAt ;
+                                                               owl:someValuesFrom bim:Site
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] .
+
+
+###  http://purl.org/net/bim-owl-test#Location
+bim:Location rdf:type owl:Class ;
+             rdfs:subClassOf [ rdf:type owl:Class ;
+                               owl:unionOf ( bim:Factory
+                                             bim:Site
+                                           )
+                             ] .
+
+
+###  http://purl.org/net/bim-owl-test#Materials
+bim:Materials rdf:type owl:Class .
+
+
+###  http://purl.org/net/bim-owl-test#Plastic
+bim:Plastic rdf:type owl:Class ;
+            rdfs:subClassOf bim:Materials .
+
+
+###  http://purl.org/net/bim-owl-test#PrefabricatedElement
+bim:PrefabricatedElement rdf:type owl:Class ;
+                         owl:equivalentClass [ owl:intersectionOf ( bim:BuildingElement
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty bim:hasBuiltAt ;
+                                                                      owl:someValuesFrom bim:Factory
+                                                                    ]
+                                                                  ) ;
+                                               rdf:type owl:Class
+                                             ] .
+
+
+###  http://purl.org/net/bim-owl-test#Site
+bim:Site rdf:type owl:Class ;
+         rdfs:subClassOf bim:Location .
+
+
+###  http://purl.org/net/bim-owl-test#Slab
+bim:Slab rdf:type owl:Class ;
+         rdfs:subClassOf bim:BuildingElement ,
+                         bim:StructuralElement ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty bim:hasBuiltAt ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass bim:Site
+                         ] .
+
+
+###  http://purl.org/net/bim-owl-test#Steel
+bim:Steel rdf:type owl:Class ;
+          rdfs:subClassOf bim:Materials .
+
+
+###  http://purl.org/net/bim-owl-test#SteelElement
+bim:SteelElement rdf:type owl:Class ;
+                 owl:equivalentClass [ owl:intersectionOf ( bim:BuildingElement
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty bim:isMadeBy ;
+                                                              owl:someValuesFrom bim:Steel
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] .
+
+
+###  http://purl.org/net/bim-owl-test#StructuralElement
+bim:StructuralElement rdf:type owl:Class ;
+                      rdfs:subClassOf bim:BuildingElement .
+
+
+###  http://purl.org/net/bim-owl-test#Wall
+bim:Wall rdf:type owl:Class ;
+         rdfs:subClassOf bim:BuildingElement ,
+                         bim:StructuralElement ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty bim:hasBuiltAt ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass bim:Site
+                         ] .
+
+
+###  http://purl.org/net/bim-owl-test#Window
+bim:Window rdf:type owl:Class ;
+           rdfs:subClassOf bim:BuildingElement ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty bim:hasBuiltAt ;
+                             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass bim:Factory
+                           ] .
+
+
+###  http://purl.org/net/bim-owl-test#Wood
+bim:Wood rdf:type owl:Class ;
+         rdfs:subClassOf bim:Materials .
+
+
+###  http://purl.org/net/bim-owl-test#WoodElement
+bim:WoodElement rdf:type owl:Class ;
+                owl:equivalentClass [ owl:intersectionOf ( bim:BuildingElement
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty bim:isMadeBy ;
+                                                             owl:someValuesFrom bim:Wood
+                                                           ]
+                                                         ) ;
+                                      rdf:type owl:Class
+                                    ] .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://purl.org/net/bim-owl-test#Beam_1
+bim:Beam_1 rdf:type owl:NamedIndividual ,
+                    bim:Beam ;
+           bim:hasBuiltAt bim:Jobsite_1 ;
+           bim:isConnected bim:Column_1 ,
+                           bim:Column_2 ;
+           bim:isMadeBy bim:Portland_Concrete .
+
+
+###  http://purl.org/net/bim-owl-test#Column_1
+bim:Column_1 rdf:type owl:NamedIndividual ,
+                      bim:Column ;
+             bim:isMadeBy bim:Portland_Concrete .
+
+
+###  http://purl.org/net/bim-owl-test#Column_2
+bim:Column_2 rdf:type owl:NamedIndividual ,
+                      bim:Column ;
+             bim:isMadeBy bim:Portland_Concrete .
+
+
+###  http://purl.org/net/bim-owl-test#Door_1
+bim:Door_1 rdf:type owl:NamedIndividual ,
+                    bim:Door ;
+           bim:hasBuiltAt bim:Factory_1 .
+
+
+###  http://purl.org/net/bim-owl-test#Factory_1
+bim:Factory_1 rdf:type owl:NamedIndividual ,
+                       bim:Factory .
+
+
+###  http://purl.org/net/bim-owl-test#Jobsite_1
+bim:Jobsite_1 rdf:type owl:NamedIndividual ,
+                       bim:Site .
+
+
+###  http://purl.org/net/bim-owl-test#Portland_Concrete
+bim:Portland_Concrete rdf:type owl:NamedIndividual ,
+                               bim:Concrete .
+
+
+###  http://purl.org/net/bim-owl-test#Window_1
+bim:Window_1 rdf:type owl:NamedIndividual ,
+                      bim:Window ;
+             bim:hasBuiltAt bim:Factory_1 .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( bim:Column_1
+                        bim:Column_2
+                      )
+] .
+
+
+[ rdf:type owl:AllDisjointProperties ;
+  owl:members ( bim:height
+                bim:length
+                bim:material
+                bim:width
+              )
+] .
+
+
+#################################################################
+#    Rules
+#################################################################
+
+<urn:swrl#x> rdf:type swrl:Variable .
+
+<urn:swrl#y> rdf:type swrl:Variable .
+
+[ rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate bim:hasBuiltAt ;
+                           swrl:argument1 <urn:swrl#x> ;
+                           swrl:argument2 <urn:swrl#y>
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:ClassAtom ;
+                                      swrl:classPredicate bim:Factory ;
+                                      swrl:argument1 <urn:swrl#y>
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:ClassAtom ;
+                                                 swrl:classPredicate bim:Door ;
+                                                 swrl:argument1 <urn:swrl#x>
+                                               ] ;
+                                     rdf:rest rdf:nil
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate bim:PrefabricatedElement ;
+                           swrl:argument1 <urn:swrl#x>
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi
